@@ -1,0 +1,245 @@
+ @import "../../css-config/mixins.scss";
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+ 
+ section {
+     min-height: 70vh;
+
+     @include md {
+         min-height: 100vh;
+     }
+
+     padding:10rem 9% 2rem;
+     width:100%;
+ }
+
+ 
+ .home {
+     font-family: 'Poppins', sans-serif;
+     display: flex;
+     flex-direction: column;
+     padding: 0.9%;
+     align-items: center;
+     @include md{
+    flex-direction: row-reverse;
+    justify-content:space-between;margin-left:5rem;
+    padding: 10%;
+        
+     }
+     .photoframe {
+     
+         width: 8rem;
+         height: 8rem;
+         border-radius: 100rem;
+         background-color: transparent;
+         border: 3px solid #D4ADFC;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+
+         @include md {
+            min-width: 25rem;
+             min-height: 25rem;
+             max-width:100%;
+            max-height:100%;
+             margin-right:5rem;
+         }
+
+         .photofield {
+             display: flex;
+             justify-content: center;
+             align-items: center;
+
+             img {
+                 object-fit: cover;
+                 border-radius: 100rem;
+                 max-width: 100%;
+                 width: 7rem;
+                 height: 7rem;
+
+                 @include md {
+                    max-width:100%;
+                    max-height:100%;
+                     width: 24rem;
+                     height: 24rem;
+                 }
+             }
+         }
+     }
+
+     .text {
+         display: flex;
+         flex-direction: column;
+        align-items: center;
+
+         h1 {
+            margin-top:1rem;
+             text-align: center;
+             font-size: 3rem;
+             font-weight: 700;
+             line-height: 1.3;
+
+             @include md {
+                 font-size: 6rem;
+                 font-weight: 700;
+                 line-height: 1.3;
+                 text-align: justify;
+             }
+         }
+
+         .line {
+            // background-color: aquamarine;
+             width: 100%;
+             height: 14rem;
+             overflow: hidden;
+             padding: 0;
+             position: relative;
+             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+             @include sm {
+                 height: 20rem;
+             }
+
+             h3 {
+                 font-size: 2.5rem;
+                 font-weight: 900;
+                 color: transparent;
+                 -webkit-text-stroke: .7px var(--second-color);
+
+                 @include md {
+                     font-size: 4rem;
+                 }
+
+             }
+
+             .lineUp {
+                 animation: 3s anim-lineUp ease-out forwards;
+             }
+
+             @keyframes anim-lineUp {
+                 0% {
+                     opacity: 0;
+                     transform: translateY(80%);
+                 }
+
+                 20% {
+                     opacity: 0;
+                 }
+
+                 50% {
+                     opacity: 1;
+                     transform: translateY(0%);
+                 }
+
+                 100% {
+                     opacity: 1;
+                     transform: translateY(0%);
+                 }
+             }
+         }
+
+         .buttons {
+
+             display: flex;
+             justify-content: space-between;
+             gap: 1rem;
+             width: 17rem;
+             height: 2.5rem;
+
+             @include sm {
+                 height: 5rem;
+                 width: 34rem;
+             }
+
+             .btn {
+                 position: relative;
+                 display: inline-flex;
+                 justify-content: center;
+                 align-items: center;
+                 width: 10rem;
+                 font-size: 0.6rem;
+
+                 @include sm {
+                     width: 13rem;
+                     font-size: 1.2rem;
+                 }
+
+                 height:100%;
+                 background-color:#D4ADFC;
+                 color:black;
+                 border:.1rem solid #302b63;
+                 border-radius: 1rem;
+                 font-size:1rem;
+                 font-weight:700;
+                 letter-spacing:.1rem;
+
+
+                 overflow: hidden;
+
+                 &:hover {
+                     background-color: black;
+                     color: aliceblue;
+
+                     border: .2rem solid #D4ADFC;
+                 }
+
+             }
+
+
+         }
+
+     }
+     .socialmedia{
+         display: flex;
+         gap:15px;
+         margin-bottom:1.5rem;
+         a{
+             color:var(--side-color);
+             &:hover{
+                 color:black;
+             }
+
+         }
+         .iconsocial{
+             display: flex;
+             align-items: center;
+             justify-content:center;
+             width:40px;
+             height:40px;
+             border-radius:100px;
+             border:2px solid plum;
+             background-color:transparent;
+             &:hover{
+                 background-color:plum;
+             }
+             @include sm{
+                 width:55px;
+                 height:55px;
+             }
+
+         }
+
+
+     }
+
+ }
+ .wave {
+    animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+    animation-duration: 2.5s;        /* Change to speed up or slow down */
+    animation-iteration-count: infinite;  /* Never stop waving :) */
+    transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+    display: inline-block;
+  }
+  
+  @keyframes wave-animation {
+      0% { transform: rotate( 0.0deg) }
+     10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+     20% { transform: rotate(-8.0deg) }
+     30% { transform: rotate(14.0deg) }
+     40% { transform: rotate(-4.0deg) }
+     50% { transform: rotate(10.0deg) }
+     60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+    100% { transform: rotate( 0.0deg) }
+  }
+ 
