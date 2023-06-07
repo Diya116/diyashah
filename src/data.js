@@ -124,7 +124,7 @@ import amazone from "../src/assets/amazone.png"
         src:amazone,
         heading:"Amazone clone",
         about:"A clone of amazone landing page for desktop",
-        github:"https://brittanychiang.com/",
+        github:"https://github.com/Diya116/amazone-desktop",
         website:""
   
       },
